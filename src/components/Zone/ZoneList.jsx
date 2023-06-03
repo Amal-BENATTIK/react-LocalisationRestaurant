@@ -6,7 +6,7 @@ const ZoneList = () => {
   const [zones, setZones] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8082/api/zones").then((response) => {
+    axios.get("https://api-localisationrestaurant-production.up.railway.app/api/zones").then((response) => {
         setZones(response.data);
     })
     
@@ -17,7 +17,7 @@ const ZoneList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this city?")) {
-      axios.delete(`http://localhost:8082/api/zones/${id}`).then(() => {
+      axios.delete(`https://api-localisationrestaurant-production.up.railway.app/api/zones/${id}`).then(() => {
         setZones(zones.filter((zone) => zone.id_Zone !== id));
       });
     }
