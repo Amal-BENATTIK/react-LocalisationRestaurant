@@ -8,7 +8,7 @@ const SerieForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8082/api/series", { nom }).then(() => {
+    axios.post("https://api-localisationrestaurant-production.up.railway.app/api/series", { nom }).then(() => {
       navigate("/Series");
     });
   };
