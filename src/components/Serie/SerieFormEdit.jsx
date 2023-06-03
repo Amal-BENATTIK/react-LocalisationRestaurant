@@ -10,7 +10,7 @@ const SerieForm = () => {
 
   useEffect(() => {
       axios
-      .get(`http://localhost:8082/api/series/${id}`)
+      .get(`https://api-localisationrestaurant-production.up.railway.app/api/series/${id}`)
       .then((response) => {
 
         const serieData = response.data;
@@ -28,7 +28,7 @@ const SerieForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    axios.post(`http://localhost:8082/api/series/${id}/${nom}`).then(() => {
+    axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/series/${id}/${nom}`).then(() => {
       navigate("/Series");
      })
       .catch(error => console.error(error));
