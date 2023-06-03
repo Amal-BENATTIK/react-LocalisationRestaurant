@@ -6,7 +6,7 @@ const SpecialiteList = () => {
   const [specialites, setSpecialites] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8082/api/specialites").then((response) => {
+    axios.get("https://api-localisationrestaurant-production.up.railway.app/api/specialites").then((response) => {
         setSpecialites(response.data);
     })
     
@@ -17,7 +17,7 @@ const SpecialiteList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this speciality?")) {
-      axios.delete(`http://localhost:8082/api/specialites/${id}`).then(() => {
+      axios.delete(`https://api-localisationrestaurant-production.up.railway.app/api/specialites/${id}`).then(() => {
         setSpecialites(specialites.filter((specialite) => specialite.id_Specialite !== id));
       });
     }
