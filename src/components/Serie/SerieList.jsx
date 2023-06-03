@@ -6,7 +6,7 @@ const SerieList = () => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8082/api/series").then((response) => {
+    axios.get("https://api-localisationrestaurant-production.up.railway.app/api/series").then((response) => {
         setSeries(response.data);
     })
     
@@ -17,7 +17,7 @@ const SerieList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this serie?")) {
-      axios.delete(`http://localhost:8082/api/series/${id}`).then(() => {
+      axios.delete(`https://api-localisationrestaurant-production.up.railway.app/api/series/${id}`).then(() => {
         setSeries(series.filter((serie) => serie.id_Serie !== id));
       });
     }
