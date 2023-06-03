@@ -10,7 +10,7 @@ const SpecialiteForm = () => {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:8082/api/villes/${id}`)
+    .get(`https://api-localisationrestaurant-production.up.railway.app/api/villes/${id}`)
     .then((response) => {
 
       const serieData = response.data;
@@ -28,7 +28,7 @@ const SpecialiteForm = () => {
 const handleSubmit = (event) => {
   event.preventDefault();
   
-  axios.post(`http://localhost:8082/api/villes/${id}/${nom}`).then(() => {
+  axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/villes/${id}/${nom}`).then(() => {
     navigate("/Villes");
    })
     .catch(error => console.error(error));
