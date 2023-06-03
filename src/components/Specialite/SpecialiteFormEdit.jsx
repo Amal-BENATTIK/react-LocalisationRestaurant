@@ -9,7 +9,7 @@ const SpecialiteForm = () => {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:8082/api/specialites/${id}`)
+    .get(`https://api-localisationrestaurant-production.up.railway.app/api/specialites/${id}`)
     .then((response) => {
 
       const serieData = response.data;
@@ -27,7 +27,7 @@ const SpecialiteForm = () => {
 const handleSubmit = (event) => {
   event.preventDefault();
   
-  axios.post(`http://localhost:8082/api/specialites/${id}/${nom}`).then(() => {
+  axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/specialites/${id}/${nom}`).then(() => {
     navigate("/Specialites");
    })
     .catch(error => console.error(error));
