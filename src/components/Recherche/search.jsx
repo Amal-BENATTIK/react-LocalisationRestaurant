@@ -22,21 +22,21 @@ const RestaurantSearch = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/villes')
+    fetch('api-localisationrestaurant-production.up.railway.app/api/villes')
       .then(response => response.json())
       .then(data => setVilles(data))
       .catch(error => console.error(error));
   }, []);
   
   useEffect(() => {
-    fetch('http://localhost:8082/api/series')
+    fetch('api-localisationrestaurant-production.up.railway.app/api/series')
       .then(response => response.json())
       .then(data => setSeries(data))
       .catch(error => console.error(error));
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:8082/api/restaurants')
+    axios.get('api-localisationrestaurant-production.up.railway.app/api/restaurants')
       .then(response => setRestaurants(response.data))
       .catch(error => console.log(error));
   }, []);
@@ -46,7 +46,7 @@ const RestaurantSearch = () => {
     const selectedValue = event.target.value;
     setVilleId(selectedValue);
 
-    fetch(`http://localhost:8082/api/zones/${selectedValue}`)
+    fetch(`api-localisationrestaurant-production.up.railway.app/api/zones/${selectedValue}`)
         .then(response => response.json())
         .then(data => setZones(data))
         .catch(error => console.error(error));
