@@ -14,7 +14,7 @@ const ZoneForm = () => {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:8082/api/zones/get/${id}`)
+    .get(`https://api-localisationrestaurant-production.up.railway.app/api/zones/get/${id}`)
     .then((response) => {
 
       const serieData = response.data;
@@ -28,7 +28,7 @@ const ZoneForm = () => {
 }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/villes')
+    fetch('https://api-localisationrestaurant-production.up.railway.app/api/villes')
       .then(response => response.json())
       .then(data => setVilles(data))
       .catch(error => console.error(error));
@@ -36,7 +36,7 @@ const ZoneForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`http://localhost:8082/api/zones/${id}/${nom}/${villeId}`).then(() => {
+    axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/zones/${id}/${nom}/${villeId}`).then(() => {
     navigate("/Zones");
      })
       .catch(error => console.error(error));
