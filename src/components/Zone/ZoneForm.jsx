@@ -9,7 +9,7 @@ const ZoneForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/villes')
+    fetch('https://api-localisationrestaurant-production.up.railway.app/api/villes')
       .then(response => response.json())
       .then(data => setVilles(data))
       .catch(error => console.error(error));
@@ -17,7 +17,7 @@ const ZoneForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`http://localhost:8082/api/zones/${nom}/${villeId}`).then(() => {
+    axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/zones/${nom}/${villeId}`).then(() => {
     navigate("/Zones");
      })
       .catch(error => console.error(error));
