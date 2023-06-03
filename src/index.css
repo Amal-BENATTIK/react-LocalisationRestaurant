@@ -1,3 +1,9 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .main-wrapper {
   position: relative;
   transition: transform 0.3s ease;
@@ -22,4 +28,26 @@
   left: 0;
   margin: 12px;
   border-radius: 4px;
+}
+
+
+.bgnav{
+  background-color: #63c5da !important;
+  color: white !important;
+
+}
+
+.btnc{
+  background-color: #3944bc !important;
+  color: white !important;
+}
+
+.nav-link{
+  color: white !important;
+
+}
+
+
+.main-wrapper{
+  height: 100vh;
 }
