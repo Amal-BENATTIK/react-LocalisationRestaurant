@@ -8,7 +8,7 @@ const SpecialiteForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8082/api/specialites", { nom }).then(() => {
+    axios.post("https://api-localisationrestaurant-production.up.railway.app/api/specialites", { nom }).then(() => {
       navigate("/Specialites");
     });
   };
