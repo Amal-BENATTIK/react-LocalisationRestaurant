@@ -25,7 +25,7 @@ const RestaurantForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/restaurants/${id}`)
+      .get(`https://api-localisationrestaurant-production.up.railway.app/api/restaurants/${id}`)
       .then((response) => {
 
         const restaurantData = response.data;
@@ -50,7 +50,7 @@ const RestaurantForm = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/villes')
+    fetch('https://api-localisationrestaurant-production.up.railway.app/api/villes')
       .then(response => response.json())
       .then(data => {setVilles(data);})
       .catch(error => console.error(error));
@@ -59,7 +59,7 @@ const RestaurantForm = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/zones')
+    fetch('https://api-localisationrestaurant-production.up.railway.app/api/zones')
       .then(response => response.json())
       .then(data => {setZones(data)})
       .catch(error => console.error(error));
@@ -67,7 +67,7 @@ const RestaurantForm = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/series')
+    fetch('https://api-localisationrestaurant-production.up.railway.app/api/series')
       .then(response => response.json())
       .then(data => setSeries(data))
       .catch(error => console.error(error));
@@ -79,7 +79,7 @@ const RestaurantForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    axios.post(`http://localhost:8082/api/restaurants/${id}/${nom}/${adresse}/${jouverture}/${houverture}/${hfermeture}/${latitude}/${longtitude}/${rank}/${serieId}/${zoneId}`).then(() => {
+    axios.post(`https://api-localisationrestaurant-production.up.railway.app/api/restaurants/${id}/${nom}/${adresse}/${jouverture}/${houverture}/${hfermeture}/${latitude}/${longtitude}/${rank}/${serieId}/${zoneId}`).then(() => {
     navigate("/Restaurants");
      })
       .catch(error => console.error(error));
@@ -90,7 +90,7 @@ const RestaurantForm = () => {
     const selectedValue = event.target.value;
     setVilleId(selectedValue);
 
-    fetch(`http://localhost:8082/api/zones/${selectedValue}`)
+    fetch(`https://api-localisationrestaurant-production.up.railway.app/api/zones/${selectedValue}`)
         .then(response => response.json())
         .then(data => setZones(data))
         .catch(error => console.error(error));
