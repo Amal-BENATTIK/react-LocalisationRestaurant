@@ -303,7 +303,7 @@ const RestaurantSearch = () => {
         </div>
         <div className='col-md-8 col-sm-12'>
           {/* <RestaurantMap  restaurants={filteredRestaurants} routes={routes} />  */}
-          <div ref={mapContainer} style={{height:'70vh'}} className="map-container" />;
+          <div ref={mapContainer} style={{height:'70vh'}} className="map-container" />
         </div>
       </div>
     </div>
