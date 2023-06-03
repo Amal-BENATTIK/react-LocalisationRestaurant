@@ -6,7 +6,7 @@ const VilleList = () => {
   const [villes, setVilles] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8082/api/villes").then((response) => {
+    axios.get("https://api-localisationrestaurant-production.up.railway.app/api/villes").then((response) => {
         setVilles(response.data);
     })
     
@@ -17,7 +17,7 @@ const VilleList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this city?")) {
-      axios.delete(`http://localhost:8082/api/villes/${id}`).then(() => {
+      axios.delete(`https://api-localisationrestaurant-production.up.railway.app/api/villes/${id}`).then(() => {
         setVilles(villes.filter((ville) => ville.id_Ville !== id));
       });
     }
