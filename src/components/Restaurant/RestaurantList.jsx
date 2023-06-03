@@ -6,7 +6,7 @@ const RestaurantList = () => {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8082/api/restaurants").then((response) => {
+        axios.get("https://api-localisationrestaurant-production.up.railway.app/api/restaurants").then((response) => {
             setRestaurants(response.data);
         })
         
@@ -17,7 +17,7 @@ const RestaurantList = () => {
     
       const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this restaurant?")) {
-          axios.delete(`http://localhost:8082/api/restaurants/${id}`).then(() => {
+          axios.delete(`https://api-localisationrestaurant-production.up.railway.app/api/restaurants/${id}`).then(() => {
             setRestaurants(restaurants.filter((restaurant) => restaurant.id_Restaurant !== id));
           });
         }
